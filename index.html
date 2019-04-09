@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Elite: Dangerous</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+</head>
+<body>
+	<main id="main" class="main">
+		<div id="intro" class="intro">
+			<iframe src="audios/silence.mp3" allow="autoplay"></iframe>
+			<video autoplay id="nvidia" class="intro-video">
+	   		<source src="videos/nvidia.mp4" type="video/mp4"></source>
+	  	</video>
+			<video id="amd" class="intro-video">
+	   		<source src="videos/amd.mp4" type="video/mp4"></source>
+	  	</video>
+	  	<video id="ue4" class="intro-video">
+	   		<source src="videos/ue4.mp4" type="video/mp4"></source>
+	  	</video>
+	  	<video id="frontier" class="intro-video">
+	   		<source src="videos/frontier.mp4" type="video/mp4"></source>
+	  	</video>
+		</div>
+		<div id="main-menu" class="main-menu">
+			<audio controls preload loop class="menu-player music" id="menu-player">
+				<source src="audios/menu.mp3" type="audio/mpeg"></source>
+			</audio>
+			<audio controls preload class="menu-player effects" id="m-item-focus">
+				<source src="audios/focus.mp3" type="audio/mpeg"></source>
+			</audio>
+			<audio controls preload class="menu-player effects" id="m-item-click">
+				<source src="audios/click.mp3" type="audio/mpeg"></source>
+			</audio>
+			<audio controls preload class="menu-player effects" id="m-item-back">
+				<source src="audios/mbclick.mp3" type="audio/mpeg"></source>
+			</audio>
+			<video loop preload muted id="menu-layer-bg-dinamic" class="menu-layer-bg-dinamic">
+	   			<source src="videos/menu.mp4" type="video/mp4"></source>
+	  		</video>
+			<div class="menu-layer-bg-static"></div>
+			<div class="menu-layer-main">
+				<ul id="main-nav" class="menu menu-nav">
+					<h1>Main Menu</h1>
+					<hr>
+					<li>
+						<button id="menu-start" class="m-item menu-item">
+							Start
+						</button>
+					</li>
+					<li>
+						<button id="menu-options" class="m-item menu-item">
+							Options
+						</button>
+					</li>
+					<li>
+						<button id="menu-credits" class="m-item menu-item menu-item-disabled" disabled>
+							Credits
+						</button>
+					</li>
+					<li>
+						<button id="menu-exit" class="m-item menu-item">
+							Exit
+						</button>
+					</li>
+					<hr>
+				</ul>
+				<ul id="options-nav" class="menu menu-nav">
+					<h1>Options</h1>
+					<hr>
+					<li>
+						<button id="gameplay" class="m-item menu-item show-option" name="#gameplay-panel">
+							Gameplay
+						</button>
+					</li>
+					<li>
+						<button id="video" class="m-item menu-item show-option" name="#video-panel">
+							Video
+						</button>
+					</li>
+					<li>
+						<button id="sound" class="m-item menu-item show-option" name="#sound-panel">
+							Sound
+						</button>
+					</li>
+					<li>
+						<button id="options-back" class="m-item menu-item show-option">
+							Back
+						</button>
+					</li>
+					<hr>
+				</ul>
+				<div id="gameplay-panel" class="menu option-panel">
+					<h1>Gameplay</h1>
+					<div class="option">
+						<input id="hardmode" class="m-item" type="checkbox" name="hardmode">
+						<label for="hardmode" class="check">
+							Hard Mode
+							<legend>If checked you will have only one hit point</legend>
+						</label>	
+					</div>
+					<button id="gameplay-back" class="m-item menu-item exit-btn btn option-back" name="#gameplay-panel">Back</button>
+				</div>
+				<div id="video-panel" class="menu option-panel">
+					<h1>Video</h1>
+					<div class="option">
+						<input id="fscreen" class="m-item" type="checkbox" name="fscreen">
+						<label for="fscreen" class="check">
+							Full Screen
+							<legend>If checked the game will displayed in full screen mode</legend>
+						</label>
+					</div>
+					<div id="brightness-op" class="option">
+						<label for="brightness">
+							Brightness
+							<legend>This scrollbar shows the level of brightness</legend>
+						</label>
+						<div id="brightness-scroll" class="scroll">
+							<span>0</span>
+							<input type="range" id="brightness" class="m-item range" name="brightness">
+							<span>100</span>
+						</div>
+					</div>
+					<button id="video-back" class="m-item menu-item exit-btn btn option-back" name="#video-panel">Back</button>
+				</div>
+				<div id="sound-panel" class="menu option-panel">
+					<h1>Sound</h1>
+					<div class="option">
+						<input id="soundoff" class="m-item" type="checkbox" name="soundoff">
+						<label for="soundoff" class="check">
+							Sound off
+							<legend>If checked sound will be turned off</legend>
+						</label>
+					</div>
+					<div id="volume-op" class="option sound-op">
+						<label for="volume">
+							Sound Volume
+							<legend>This scrollbar shows the level of sound</legend>
+						</label>
+						<div id="volume-scroll" class="scroll">
+							<span>0</span>
+							<input type="range" id="volume" class="m-item range sound-scr" name="volume">
+							<span>100</span>
+						</div>
+					</div>
+					<div id="effects-op" class="option sound-op">
+						<label for="effects">
+							Effects Volume
+							<legend>This scrollbar shows the level of effects</legend>
+						</label>
+						<div id="effects-scroll" class="scroll">
+							<span>0</span>
+							<input type="range" id="effects" class="m-item range sound-scr" name="effects">
+							<span>100</span>
+						</div>
+					</div>
+					<div id="music-op" class="option sound-op">
+						<label for="music">
+							Music Volume
+							<legend>This scrollbar shows the level of music</legend>
+						</label>
+						<div id="music-scroll" class="scroll">
+							<span>0</span>
+							<input type="range" id="music" class="m-item range sound-scr" name="music">
+							<span>100</span>
+						</div>
+					</div>
+					<button id="sound-back" class="m-item menu-item exit-btn btn option-back back" name="#sound-panel">Back</button>
+				</div>
+			</div>
+			<div id="exit-window" class="menu exit-window">
+				<div class="exit-border">
+					<hr>
+					<div class="exit-message">
+						<p>Are you sure?</p>
+						<button id="exit-exit" class="m-item menu-item exit-btn btn">Exit</button>
+						<button id="exit-cancel" class="m-item menu-item exit-btn btn">Cancel</button>
+					</div>	
+					<hr>
+				</div>		
+			</div>	
+		</div>
+		<div id="game-screen" class="game">
+			<audio controls preload loop class="menu-player music" id="game-music">
+				<source src="audios/mgame.mp3" type="audio/mpeg"></source>
+			</audio>
+			<audio controls preload loop class="menu-player effects" id="your-shot-effect">
+				<source src="audios/yshot.mp3" type="audio/mpeg"></source>
+			</audio>
+			<audio controls preload loop class="menu-player effects" id="enemy-shot-effect">
+				<source src="audios/eshot.mp3" type="audio/mpeg"></source>
+			</audio>
+			<audio controls preload loop class="menu-player effects" id="boom-effect">
+				<source src="audios/boom.mp3" type="audio/mpeg"></source>
+			</audio>
+			<div id="static-game-bg" class="static-game-bg"></div>
+			<div id="active-game-bg" class="active-game-bg"></div>
+			<div id="game-layer" class="game-layer"></div>
+			<div id="interface"></div>
+		</div>
+	</main>
+	<script src="js/controls.js"></script>
+	<script src="js/game.js"></script>
+	<script src="js/video.js"></script>
+	<script src="js/sound.js"></script>
+	<script src="js/fullscreen.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
